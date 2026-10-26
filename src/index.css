@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+}
