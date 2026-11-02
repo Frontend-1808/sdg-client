@@ -36,6 +36,10 @@ export default function RichTextEditor({
       toolbarSticky: false,
       askBeforePasteHTML: false,
       defaultActionOnPaste: "insert_clear_html",
+      // Muammoni hal qiluvchi xavfsizlik sozlamalari:
+      allowTags: '*',
+      allowAttributes: '*',
+      cleanOnPaste: false,
       buttons: [
         "bold",
         "italic",
