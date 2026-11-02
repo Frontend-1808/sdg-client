@@ -28,18 +28,27 @@ export default function RichTextEditor({
   const [pickerOpen, setPickerOpen] = useState(false);
 
   const config = useMemo(
-    () => ({
-      readonly: false,
-      height: 520,
-      placeholder,
-      toolbarAdaptive: true,
-      toolbarSticky: false,
-      askBeforePasteHTML: false,
-      defaultActionOnPaste: "insert_clear_html",
-      // Muammoni hal qiluvchi xavfsizlik sozlamalari:
-      allowTags: '*',
-      allowAttributes: '*',
-      cleanOnPaste: false,
+  () => ({
+    readonly: false,
+    height: 520,
+    placeholder,
+    toolbarAdaptive: true,
+    toolbarSticky: false,
+    askBeforePasteHTML: false,
+    defaultActionOnPaste: "insert_clear_html",
+    // Ushbu qatorlarni qo'shing:
+    allowTags: '*',
+    allowAttributes: '*',
+    cleanOnPaste: false,
+    useAceEditor: true,
+    // Jodit'ning ichki tozalash filtrlarini o'chirish uchun:
+    controls: {
+      source: {
+        exec: (editor) => {
+          editor.toggleMode();
+        }
+      }
+    },
       buttons: [
         "bold",
         "italic",
